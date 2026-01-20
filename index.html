@@ -16,12 +16,21 @@
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
+        /* Ocultar barra de scroll para una experiencia más limpia en la galería */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
   }
@@ -30,5 +39,7 @@
 </head>
 <body>
     <div id="root"></div>
+    <!-- Carga del punto de entrada de la aplicación -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>

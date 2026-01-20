@@ -1,11 +1,11 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { ARTWORKS as INITIAL_DATA } from './data';
-import { Artwork } from './types';
-import { fetchNotionArtworks } from './services/notionService';
-import ArtworkCard from './components/ArtworkCard';
-import ArtworkModal from './components/ArtworkModal';
-import ImmersiveGallery from './components/ImmersiveGallery';
+import { ARTWORKS as INITIAL_DATA } from './data.ts';
+import { Artwork } from './types.ts';
+import { fetchNotionArtworks } from './services/notionService.ts';
+import ArtworkCard from './components/ArtworkCard.tsx';
+import ArtworkModal from './components/ArtworkModal.tsx';
+import ImmersiveGallery from './components/ImmersiveGallery.tsx';
 
 const App: React.FC = () => {
   const [artworks, setArtworks] = useState<Artwork[]>(INITIAL_DATA);
