@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Artwork } from '../types';
+import { Artwork } from '../types.ts';
 
 interface ImmersiveGalleryProps {
   artworks: Artwork[];
@@ -35,7 +35,7 @@ const ImmersiveGallery: React.FC<ImmersiveGalleryProps> = ({ artworks, initialIn
   if (!currentArtwork) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] bg-black flex flex-center justify-center overflow-hidden animate-in fade-in duration-500">
+    <div className="fixed inset-0 z-[100] bg-black flex items-center justify-center overflow-hidden animate-in fade-in duration-500">
       {/* Botón Cerrar */}
       <button 
         onClick={onClose}
@@ -67,7 +67,7 @@ const ImmersiveGallery: React.FC<ImmersiveGalleryProps> = ({ artworks, initialIn
 
       {/* Imagen Principal */}
       <div 
-        className="w-full h-full flex items-center justify-center p-4 md:p-12"
+        className="relative w-full h-full flex items-center justify-center p-4 md:p-12"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -80,7 +80,7 @@ const ImmersiveGallery: React.FC<ImmersiveGalleryProps> = ({ artworks, initialIn
         
         {/* Info Overlay on Hover */}
         <div 
-          className={`absolute bottom-0 left-0 right-0 p-12 bg-gradient-to-t from-black via-black/80 to-transparent transition-all duration-500 transform ${
+          className={`absolute bottom-0 left-0 right-0 p-12 bg-gradient-to-t from-black via-black/90 to-transparent transition-all duration-500 transform ${
             isHovered ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'
           }`}
         >
